@@ -1,0 +1,48 @@
+How to create a bucket ?
+
+import boto3
+
+s3 = boto3.resource('s3')
+s3.create_bucket(Bucket='mybucket', CreateBucketConfiguration={
+    'LocationConstraint': 'eu-west-1'})
+
+
+How to  upload a file to S3?
+
+s3 = boto3.client('s3')
+s3.upload_file(
+   Filename = "text.txt",
+   Bucket = "eng114-bogdana1-bucket",
+   Key = "text.txt"
+)
+
+
+How to download a file from the bucket : 
+
+import boto3 
+s3client = boto3.client('s3')
+s3client.download_file("eng114-bogdana1-bucket","text.txt","text.txt")
+
+
+How to delete a file from a bucket : 
+import boto3
+bucket_name = "eng114-bogdana1-bucket"
+file_name = "text.txt"
+s3_client = boto3.client("s3")
+s3_client.delete_object(Bucket=bucket_name, Key=file_name)
+
+
+
+How to delete a bucket ? 
+import boto3
+client = boto3.client("s3", region_name="eu-west-1")
+
+bucket_name = "eng114-bogdana1-bucket"
+
+client.delete_bucket(Bucket=bucket_name)
+
+print("Amazon S3 Bucket has been deleted")
+
+
+
+
