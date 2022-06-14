@@ -1,5 +1,7 @@
 DOCUMENTATION FOR Autoscaling and Load Balancing :
 
+<img src ="AScale.png">
+
 Application Load Balancer 
 
 1) Autoscaling automatically adjusts the amount of computational resources 
@@ -14,7 +16,6 @@ the instances actively available.
 
 
 When we create an autoscaling group we need to pland and design in advance and we
-
 need to decide :
 
 1) the min  - 2- number of isntances which we would like to run.
@@ -35,13 +36,10 @@ As soon as the other instance becomes available, the Load Balancer redirects the
 to that instance.
 
 
-
-
 So if there are 2 EC2 instances dealing with a lot of traffic, if one is not working anymore
 Load Balancer is notified and redirect the traffic to the other EC2 instance.
 Auto Scalling group is generating a instance and notifies the Load balancer to redirect
 the traffic between the 2 instances.
-
 
 
 When creating the group we need to decide the min and max number of instances running.
@@ -53,10 +51,7 @@ When the traffic goes down : scale in.
 When creating the instances we can create a template -- which can be used for all of them--
 
 
-There are a few things which we need to consider in order to create :
-
-1) auto-scaling group and
-2) load balancer
+There are a few things which we need to consider in order to create :auto-scaling group and load balancer:
 
 1) Launch template
 2) Type of Load Balancer : we choose application load balancer ( for a web appp)
@@ -68,6 +63,9 @@ There are a few things which we need to consider in order to create :
 
 
 So a lot of services are connected to each other ; 
+<img src = "CWatch.png">
+
+
 
 For all these services we need :
 
