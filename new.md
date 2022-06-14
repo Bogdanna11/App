@@ -120,7 +120,11 @@ SELECT : autoscaling group :
 9)scaling policy: metric type : average CPU utilization 
 
 
+The Auto-Scale group will run 2 instances at the same time ; if we terminate one instance it will generate another one;the process will
+repeat because we have set it to run to a min of 2 instances.
+If we paste the IP of any instance in the browser NGINX will get displayed.
 
+The only way for this process to stop is to delete the Auto-Scale group.
 
 
 
