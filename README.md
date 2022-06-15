@@ -38,7 +38,7 @@ An optional layer of security that acts as a firewall for controlling traffic in
 
 WHAT IS INTERNET GATEWAY?
 
-<<img src = "INTERNET.png">
+<img src = "INTERNET.png">
 
 An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet.
   An internet gateway enables resources (like EC2 instances) in your public subnets to connect to the internet if the resource has a public IPv4 address or an IPv6 address.
@@ -52,6 +52,7 @@ An internet gateway supports IPv4 and IPv6 traffic. It does not cause availabili
 
 
 WHAT IS a SUBNET ?
+<img src = "SUBNET.png">
 
 A subnet, or subnetwork, is a segmented piece of a larger network.
  More specifically, subnets are a logical partition of an IP network into multiple, smaller network segments. 
