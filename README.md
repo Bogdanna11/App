@@ -2,7 +2,7 @@ WHAT IS VPC ?
 
  A VPC gives an enterprise the ability to define and control a virtual network that is logically isolated from all other public cloud tenants, 
 creating a private, secure place on the public cloud.
-<img src = "VPC.png">
+<img src = "VPC.jpg">
 
 
 WHAT ARE THE BENEFITS ?
@@ -27,14 +27,14 @@ Classless inter-domain routing (CIDR) is a method
 for allocating IP addresses and IP routing. 
 A collection of Internet Protocol (IP) standards is used to create unique identifiers for networks and individual devices. The IP addresses allow the transmission of unique packets of
  information to specific computers.
-<img src = "CIDR.png">
+<img src = "CIDR.jpg">
 
 WHAT IS NACL?
 
 An optional layer of security that acts as a firewall for controlling traffic in and out of a subnet.
  You can associate multiple subnets with a single network ACL, but a subnet can be associated with only one network ACL at a time.
 
-<img src = "NACL.png">
+<img src = "NACL.jpg">
 
 WHAT IS INTERNET GATEWAY?
 
