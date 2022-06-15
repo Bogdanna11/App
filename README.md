@@ -1,3 +1,7 @@
+My own VPC:
+
+<img src = "my_VPC.png">
+
 WHAT IS VPC ?
 
  A VPC gives an enterprise the ability to define and control a virtual network that is logically isolated from all other public cloud tenants, 
