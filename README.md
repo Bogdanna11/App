@@ -52,7 +52,11 @@ An internet gateway supports IPv4 and IPv6 traffic. It does not cause availabili
 
 
 WHAT IS a SUBNET ?
+
+
 <img src = "SUBNET.png">
+
+
 
 A subnet, or subnetwork, is a segmented piece of a larger network.
  More specifically, subnets are a logical partition of an IP network into multiple, smaller network segments. 
