@@ -128,7 +128,7 @@ The only way for this process to stop is to delete the Auto-Scale group.
 
 What is the difference between CD & CDE use cases?
 
-<img src="CICD#.png">
+<img src="pipe.png">
 
 CI CD is considered as the backbone of DevOps practices and automation, 
 It plays vital, challenging and exciting role in DevOps culture,
