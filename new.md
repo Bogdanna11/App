@@ -126,6 +126,87 @@ If we paste the IP of any instance in the browser NGINX will get displayed.
 
 The only way for this process to stop is to delete the Auto-Scale group.
 
+What is the difference between CD & CDE use cases?
+
+
+CI CD is considered as the backbone of DevOps practices and automation, 
+It plays vital, challenging and exciting role in DevOps culture,
+ growing numbers of companies releasing software in minutes with the adoption of CICD practices.
+
+Approximately 2400 companies reportedly use CICD pipelines in their tech stack, 
+including Facebook, Netflix, and Instacart, predominantly to gain the benefits of Faster software builds,
+ customer satisfaction by deploying the app in time, Small code changes make fault isolation simpler and quicker, 
+are the few advantages.
+
+Continuous Integration (CI): Developers merge/commit code to master branch multiple times a day,
+ fully automated build and test process which gives feedback within few minutes,
+ by doing so, you avoid the integration hell that usually happens when people wait for 
+release day to merge their changes into the release branch.
+
+
+
+Continuous Delivery is an extension of continuous integration to make sure that you can release 
+new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing,
+ you also have automated your release process and you can deploy your application at any point of time by clicking on a button.
+ In continuous Delivery the deployment is completed manually.
+
+
+
+Continuous Deployment goes one step further than continuous delivery, with this practice, every change that passes all 
+stages of your production pipeline is released to your customers, there is no human intervention, 
+and only a failed test will prevent a new change to be deployed to production.
+
+
+How CICD Practices relate to each other: To put it simply, the continuous integration is part of both continuous delivery and continuous deployment. 
+The main difference is the deployment step, in continuous delivery the deployment is done manually and in continuous deployment it happens automatically.
+
+What is a CI CD Pipeline: The CI/CD pipeline is all about automation: Initiating code builds, automated testing,
+ and automated deploying to the staging or production environments. It’s complex and exciting at the same time, but incredibly fast,
+ if the output of any stage fails, the next stage will also fail.
+
+
+
+
+
+What is Jenkins?
+
+Why Jenkins? Multi Billion Dollar companies like Facebook, Netflix and Ebay have adopted Jenkins because of it’s amazing advantages,
+ Jenkins is an open-source automation server in which the central build and CI process take place, 
+It is a Java-based program with packages for Windows, macOS, & Linux.
+
+Great range of plugins available, Jenkins supports building, deploying, and automating for software development projects, easy installation, simple and user-friendly interface, 
+extensible with huge community-contributed plugin resource, easy environment configuration in user interface & supports distributed builds with master-slave architecture.
+
+
+What are the benefits of CICD pipeline :
+
+Automation of software releases — from initial testing to the final deployment — is a significant benefit of the CI/CD pipeline. 
+Additional benefits of the CI/CD process for development teams include the following:
+
+Reducing time to deployment through automation: Automated testing makes the development process more efficient, 
+reducing the length of the software delivery process. In addition, continuous deployment and automated provisioning
+ allow a developer’s changes to a cloud application to go live within minutes of writing them.
+Decreasing the costs associated with traditional software development: Fast development, testing and production (facilitated by automation)
+ means less time spent in development and, therefore, less cost.
+Continuous feedback for improvement: The CI/CD pipeline is a continuous cycle of build, test and deploy. Every time code is tested, 
+developers can quickly take action on the feedback and improve the code.
+Improving the ability to address error detection earlier in the development process: In continuous integration, testing is automated
+ for each version of code built to look for issues integration. These issues are easier to fix the earlier in the pipeline that they occur.
+Improving team collaboration and system integration. Everyone on the team can change code, respond to feedback and quickly respond to any issues that occur.
+
+
+Why Jenkinns ?
+
+When selecting CI/CD tools, the focus should be on how to optimize and automate the software development process. 
+An effective CI/CD pipeline uses open-source tools for integration, testing and deployment.
+ Correct configuration of your CI/CD process also impacts the success of the software development pipeline.
+
+The most common open-source CI/CD tool is Jenkins. Jenkins is an automated CI server written in Java and used 
+for automating CI/CD steps and reporting. Other open-source tools for integration include Travis CI and CircleCI.
+
+Integrated development environments (IDE), such as GitHub or AWS CodeCommit, help developers create, 
+maintain and track software packages, while platforms like GitLab seek to provide the IDE within a comprehensive platform that includes other tools.
+
 
 
 
