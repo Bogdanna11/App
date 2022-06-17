@@ -1,3 +1,64 @@
+
+Second iteration task :
+
+1) Create a dev branch on your localhost - GITHUB ;
+  -  git branch DevOps
+     git add DevOps
+     git checkout DevOps
+     git commit -m "adding the new branch"
+     git push -u origin DevOps
+
+2) Make a change in the README.md:
+     nano README.md
+     git add .
+     git commit -m "adding readme"
+     git push -u origin
+
+3) Create a new job that gets triggered if the tests were successful
+   Bogdana_new  : the post actions set to trigger job bogdana-ci ;
+
+Bogdana_new CONSOLE OUTPUT : 
+
+Started by user DevOpsLondon
+Cloning the remote Git repository
+
+Commit message: "adding readme"
+First time build. Skipping changelog.
+Triggering a new build of bogdana-ci
+Finished: SUCCESS
+
+
+4) Second job :  bogdana-ci is running the tests in the app -
+   tests run succesfully ;
+
+CONSOLE OUTPUT  FOR bogdana-ci : 
+
+Started by upstream project "Bogdana_New" build number 1
+originally caused by:
+ Started by user DevOpsLondon
+
+Commit message: "adding readme"
+First time build. 
+
+
+
+Your app is ready and listening on port 3000
+  Homepage
+    ✓ should display the homepage at / GET
+    ✓ should contain the word Sparta at / GET
+
+  Fibonacci
+    ✓ should display the correct fibonacci value at /fibonacci/10 GET
+
+
+  3 passing (50ms)
+
+Finished: SUCCESS
+
+
+
+
+
 My own VPC:
 -creating DevOps branch
 HELLLOO
