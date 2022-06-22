@@ -91,6 +91,44 @@ Infrastructure as Code (IaC) is a core part of the DevOps domain and is a core s
 When a DevOps engineer thinks about automation using code in DevOps, two DevOps tools always get highlighted, Terraform and Ansible. Both are top-rated and widely used tools in the DevOps domain.
 
 
+How to create the CI/CD pipeline ?
+<img src="new_jenkins.jpg">
+
+
+STEP1: create the EC2 instance
+STEP2 : in jankins :
+
+1) create a job 
+
+
+2) use pem key to connect to EC2 instance
+   chmod 400 flask.pem
+
+3) in the script shell:
+
+ 
+scp -i 114.pem app ubuntu@(PUBLIC IP):
+
+   -- scp the APP folder into the EC2
+   -- install node js for the eEC2
+
+
+When all that is done:
+
+from the localhost SSH into EC2
+
+from localhost
+
+npm install
+npm start 
+
+
+and it should run it.
+============
+
+
+
+
 My own VPC:
 
 HELLLOO
