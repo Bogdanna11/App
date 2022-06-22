@@ -102,28 +102,27 @@ STEP2 : in jankins :
 
 
 2) use pem key to connect to EC2 instance
-   chmod 400 flask.pem
+   chmod 400 114.pem
 
-3) in the script shell:
+3) in the script shell config( in Jenkins) - in the CD ( 3rd job -deployment-triggered) :
 
- 
-scp -i 114.pem app ubuntu@(PUBLIC IP):
+    scp -i 114.pem app ubuntu@(PUBLIC IP):
 
    -- scp the APP folder into the EC2
-   -- install node js for the eEC2
+   -- install node js for the EC2
 
 
 When all that is done:
 
-from the localhost SSH into EC2
-
-from localhost
+1) from the localhost SSH into EC2
 
 npm install
 npm start 
 
-
-and it should run it.
+or 
+2) change the index.ejp file -push the change to GIT - the change goes in the 1st job which uploads the app - 2nd job tests the app with NODEJS plugin-
+- 3rd job copies the app into the EC2 instance and starts the app inside the instance using automation - the app can be seen at the EC2 IP:3000 location.
+- 
 ============
 <img src="Jenkins.png">
 
