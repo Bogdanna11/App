@@ -3,17 +3,54 @@
 How to connect The CONTROLLER TO THE WEB AND DB MACHINES:
 
 ssh vagrant controller 
+
 sudo apt-get update -y
 
 To connect into the WEB OR DB : 
-    ssh vagrant@192.168.33.10 ( the web address ) 
+
+    ssh vagrant@192.168.33.10 ( the web address )
+    
     ssh vagrant@192.168.33.11 ( the db address ) 
+    
     ssh vagrant@192.168.33.12( the controller address)
+    
 NEXT STEP :  PROVIDE PASSWORD
+
 To exit we do : exit back to the controller
 
 sudo apt-get install software-properties-common
+
 sudo apt-add-repository ppa:ansible/ansible
+
+
+cd etc
+
+cd ansible
+
+/etc/ansible$ ansible web -m ping
+ sudo nano hosts ( [web]
+192.168.33.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant)
+
+CHECK IT AGAIN :
+/etc/ansible$ ansible web -m ping
+
+RESULT:
+192.168.33.10 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+
+SET UP THE HOST FOR DB AS WELL:
+[db]
+192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+
+
+
+
 
 What is IAC ?
 <img src="iac.png">
