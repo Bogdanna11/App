@@ -1,3 +1,40 @@
+
+
+What is IAC ?
+
+Infrastructure as Code (IaC) uses a high-level descriptive coding language to automate the provisioning of IT infrastructure. 
+This automation eliminates the need for developers to manually provision and manage servers, operating systems, database connections, storage, and other infrastructure elements every time they want to develop, test, or deploy a software application.
+
+BENEFITS:
+
+Faster time to production/market: IaC automation dramatically speeds the process of provisioning 
+infrastructure for development, testing, and production (and for scaling or taking down production infrastructure as needed). Because it codifies and documents everything, IaC can even automate provisioning of legacy infrastructure, which might otherwise be governed by time-consuming processes (like pulling a ticket).
+
+Improved consistency—less ‘configuration drift’: Configuration drift occurs when ad-hoc configuration changes and updates result
+in a mismatched development, test, and deployment environments. This can result in issues at deployment, security vulnerabilities, and risks when developing applications and services that need to meet strict regulatory compliance standards. IaC prevents drift by provisioning the same environment every time.
+
+Faster, more efficient development: By simplifying provisioning and ensuring infrastructure consistency, IaC can confidently accelerate every phase of the software delivery lifecycle. Developers can quickly provision sandboxes and continuous integration/continuous deployment (CI/CD) environments. QA can quickly provision full-fidelity test environments. Operations can quickly provision infrastructure for security and user-acceptance testing. And when the code passes testing, the application and the production infrastructure it runs on can be deployed in one step.
+
+Protection against churn: To maximize efficiency in organizations without IaC, provisioning is typically delegated a few skilled engineers or IT staffers. If one of these specialists leaves the organization, others are sometimes left to reconstruct the process. IaC ensures that provisioning intelligence always remains with the organization.
+
+Lower costs and improved ROI: In addition to dramatically reducing the time, effort, and specialized skill required to provision and scale infrastructure, IaC lets organizations take maximum advantage of cloud computing’s consumption-based cost structure. It also enables developers to spend less time on plumbing and more time developing innovative, mission-critical software solutions.
+
+
+
+WHAT IS CONFIGURATIONS MANAGEMETNT AND ORHCHESTRTION WITH IAC ?
+Maintains the consistency of an application’s performance, 
+as well as its functional and physical inputs along with requirements, overall design, and operations throughout the lifespan of the product.
+
+WHAT IS ANSIBLE ?
+
+Ansible is an open-source software provisioning, configuration management, and application-deployment tool.
+It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows. 
+
+Infrastructure as Code (IaC) is a core part of the DevOps domain and is a core skill that DevOps engineers must possess. IaC is used to provision and manage the IT infrastructure using configuration code that is machine-readable definition files. Using this software engineering approach towards operations, you can automate the IT infrastructure using programming scripts.
+
+When a DevOps engineer thinks about automation using code in DevOps, two DevOps tools always get highlighted, Terraform and Ansible. Both are top-rated and widely used tools in the DevOps domain.
+
+
 My own VPC:
 
 HELLLOO
