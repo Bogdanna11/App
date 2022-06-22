@@ -1,5 +1,20 @@
 
 
+How to connect The CONTROLLER TO THE WEB AND DB MACHINES:
+
+ssh vagrant controller 
+sudo apt-get update -y
+
+To connect into the WEB OR DB : 
+    ssh vagrant@192.168.33.10 ( the web address ) 
+    ssh vagrant@192.168.33.11 ( the db address ) 
+    ssh vagrant@192.168.33.12( the controller address)
+NEXT STEP :  PROVIDE PASSWORD
+To exit we do : exit back to the controller
+
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+
 What is IAC ?
 <img src="iac.png">
 
