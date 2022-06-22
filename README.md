@@ -27,7 +27,7 @@ Maintains the consistency of an application’s performance,
 as well as its functional and physical inputs along with requirements, overall design, and operations throughout the lifespan of the product.
 
 WHAT IS ANSIBLE ?
-<img src="ansible.png">
+<img src="ansible.jpg">
 
 Ansible is an open-source software provisioning, configuration management, and application-deployment tool.
 It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows. 
