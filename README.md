@@ -92,7 +92,7 @@ When a DevOps engineer thinks about automation using code in DevOps, two DevOps 
 
 
 How to create the CI/CD pipeline ?
-<img src="new_jenkins.jpg">
+<img src="new_jen.jpg">
 
 
 STEP1: create the EC2 instance
