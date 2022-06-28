@@ -171,7 +171,7 @@ In the controller I  clone my ripo where my app is : https://github.com/Bogdanna
 I run the app.yml playbook which installs : nodejs/nginx/sets the envin. variable for the DB
 
 
-
+<img src="Playbook_App.png">
 
 
 
