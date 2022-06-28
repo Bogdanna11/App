@@ -1,4 +1,213 @@
 
+DOCUMENTATION ANSIBLE & AWS :
+
+1) Create EN2 instance for the controller 
+   - set the security groups for port 22 to be able to ssh from my localhost
+     ( ssh -i "eng114_group.pem ubuntu@3.249.67.18 ) 
+   - in the user details :
+ ```  
+     sudo apt-get update -y
+     sudo apt-get upgrade
+     sudo apt install python
+     sudo apt install python-pip
+     pip install boto boto3 ansible
+
+2) Generate the eng114 and eng114.pub keys and the eng114_group.pem( from AWS ) 
+   inside the ~/.ssh folder in the EC2 controller ;
+   give rights to the pem key :
+
+   sudo chmod 400 eng114_group.pem
+3) cd ansible 
+4) 
+   mkdir group_vars
+   cd group_vars
+   mkdir all
+   cd all 
+   Create Ansible Vault file to store the AWS acces key and aws secret key :
+ 
+    sudo ansible-vault create pass.yml
+    Provide a password which I need to remeber 
+  
+   The password provided here will be asked every time the playbook
+   is executed or when editing the pass.yml file.
+
+  Inside the file: 
+
+  aws_access_key: AAAAAAAAAAAAAABBBBBBBBBBBB                                      
+  aws_secret_key: afjdfadgf$fgajk5ragesfjgjsfdbtirhf
+
+  Give rights to the vault file:
+  sudo chmod 666 pass.yml ( in the same directory ) 
+  
+   ```
+
+4) Generate an instance using the following playbook:
+
+
+
+
+```
+# AWS playbook
+---
+
+- hosts: localhost
+  connection: local
+  gather_facts: True
+
+  vars:
+    key_name: eng114
+    region: eu-west-1
+    image: ami-07b63aa1cfd3bc3a5 # https://cloud-images.ubuntu.com/locator/ec2/
+    id: "eng114-bogdana-ansible"
+    sec_group: "{{ id }}-sec"
+
+  tasks:
+
+    - name: Facts
+      block:
+
+      - name: Get instances facts
+        ec2_instance_facts:
+          aws_access_key: "{{aws_access_key}}"
+          aws_secret_key: "{{aws_secret_key}}"
+          region: "{{ region }}"
+        register: result
+
+      - name: Instances ID
+        debug:
+          msg: "ID: {{ item.instance_id }} - State: {{ item.state.name }} - Public DNS: {{ item.public_dns_name }}"
+        loop: "{{ result.instances }}"
+
+      tags: always
+
+
+    - name: Provisioning EC2 instances
+      block:
+
+      - name: Upload public key to AWS
+        ec2_key:
+          name: eng114
+          key_material: "{{ lookup('file', '~/.ssh/{{ key_name }}.pub') }}"
+          region: "{{ region }}"
+          aws_access_key: "{{aws_access_key}}"
+          aws_secret_key: "{{aws_secret_key}}"
+
+      - name: Create security group
+        ec2_group:
+          name: "{{ sec_group }}"
+          description: "Sec group for app {{ id }}"
+          # vpc_id: 12345
+          region: "{{ region }}"
+          aws_access_key: "{{aws_access_key}}"
+          aws_secret_key: "{{aws_secret_key}}"
+          rules:
+            - proto: tcp
+              ports:
+                - 22
+              cidr_ip: 0.0.0.0/0
+              rule_desc: allow all on ssh port
+        register: result_sec_group
+
+      - name: Provision instance(s)
+        ec2:
+          aws_access_key: "{{aws_access_key}}"
+          aws_secret_key: "{{aws_secret_key}}"
+          key_name: eng114_group.pem
+          id: "{{ id }}"
+          group_id: "{{ result_sec_group.group_id }}"
+          image: "{{ image }}"
+          instance_type: t2.micro
+          region: "{{ region }}"
+          wait: true
+          count: 1
+          # exact_count: 2
+          # count_tag:
+          #   Name: App
+          # instance_tags:
+          #   Name: App
+
+      tags: ['never', 'playbook_app']
+
+ ```
+
+
+=========================================================
+
+
+IMPORTANT: If I  execute Ansible without the tags argument the creation tasks won’t be performed.
+
+ansible-playbook playbook.yml --ask-vault-pass
+
+The correct syntax is :  sudo ansible-playbook playbook.yml --ask-vault-pass --tags playbook_app
+
+
+GET THE PUBLIC DNS :  ansible-playbook playbook.yml --ask-vault-pass
+
+==============================================
+
+Once the instance is created and running , I go and change the security group and set:
+
+1) port 22 to accept SSH connection from everywhere 
+2) port 80 to accept nginx
+3) port 3000 to accept connection from everywhere 
+
+save it 
+
+<img src="EC2_app.png">
+
+<img src="EC2_app2.png">
+
+
+
+In the controller set the HOSTS folder group:
+
+[app]
+ec2-instance ansible_host=54.171.194.55 ansible_user=ubuntu ansible_ssh_private_key_file=~/.eng114_group.pem
+
+
+In the controller I  clone my ripo where my app is : https://github.com/Bogdanna11/App.git
+
+
+I run the app.yml playbook which installs : nodejs/nginx/sets the envin. variable for the DB
+
+
+
+
+
+
+
+Then from the controller cd ~/.ssh and execute the following command:
+
+ssh -i "eng114_group.pem" ubuntu@ec2-54-171-194-55.eu-west-1.compute.amazonaws.com
+
+
+
+I am inside the app instance I cd into home/app : npm start 
+
+
+Here is the result : 
+
+<img src="app_running_aws.png">
+
+
+
+
+
+==============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 How to connect The CONTROLLER TO THE WEB AND DB MACHINES:
 
