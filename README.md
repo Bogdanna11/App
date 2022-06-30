@@ -1,3 +1,13 @@
+Adding my VPC to AWS :
+
+<img src ="MY_VPC2.png">
+
+HERE IS MY VPC:
+
+<img src ="My_VPC.png">
+
+
+
 What is TERRAFORM ?
 
 Terraform is an open source “Infrastructure as Code” tool, created by HashiCorp.
